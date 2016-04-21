@@ -38,4 +38,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_region => ENV['AWS_REGION'],
+    :s3_host_name => 's3-us-west-2.amazonaws.com',
+    :bucket => 'paperclip-roy',
+  }
 end
